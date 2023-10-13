@@ -10558,9 +10558,19 @@ section#contact form#contactForm :-ms-input-placeholder {
   background: rgba(0,0,0,.3);
 }
 
+.gradient-background {
+    background: linear-gradient(to bottom, black, pink); /* Black to Pink gradient */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure the gradient covers the entire viewport height */
+}
+.gradient-div {
+    background: linear-gradient(to right, black, pink); /* Black to Pink gradient */
+}
+
     </style>
     {% block content %}
-     <body style=" background-image: url(/static/images/bg.jpg)">
+    <body class="gradient-background">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="{% static 'images/metro.jfif' %}" alt="" /></a>
@@ -10575,7 +10585,7 @@ section#contact form#contactForm :-ms-input-placeholder {
                 </div>
             </div>
         </nav>
-    <div class="signup-form center">
+    <div class="signup-form center gradient-div">
       <form class="" method="POST">
         {% csrf_token %}
         <h1>Sign Up</h1>
