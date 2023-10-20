@@ -18,7 +18,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 Add procfile
 web: gunicorn metroevents.wsgi
-release: python manage.py migrate
 
 To check the logs on cmd:
 heroku logs -t
