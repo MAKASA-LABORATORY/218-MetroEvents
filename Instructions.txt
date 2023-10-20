@@ -1,0 +1,24 @@
+Heroku:
+heroku login
+Create a requirement.txt:
+pip install gunicorn
+pip freeze
+pip freeze > requirements.txt
+
+git init
+git add -A
+git status
+git commit -m "Initial Commit"
+
+heroku create metro-event
+
+git push heroku master
+Go to settings.py
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+Add procfile
+web: gunicorn metroevents.wsgi
+release: python manage.py migrate
+
+To check the logs on cmd:
+heroku logs -t
